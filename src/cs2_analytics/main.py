@@ -26,11 +26,20 @@ def main():
 
     print("\n[1/3] 下載選手資料")
 
+    failed_players = []
+
     for player in PLAYERS:
         try:
             download_player(player)
+            print(f"{player} 下載成功")
         except Exception as error:
             print(f"{player} 下載失敗：{error}")
+            failed_players.append(player)
+
+    if failed_players:
+        raise RuntimeError(
+            f"以下選手資料下載失敗：{', '.join(failed_players)}"
+        )
 
     print("\n[2/3] 處理統計資料")
     process_stats()
