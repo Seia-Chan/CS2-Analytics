@@ -237,6 +237,80 @@
 
         <p class="notice" id="source-note"></p>
         <p id="status"></p>
+        
+    <section class="panel" style="margin-top: 30px;">
+        <h2 style="color: var(--accent);">About This Project</h2>
+
+        <h3>1. 專案介紹</h3>
+        <p>
+            CS2 Analytics 是使用 Python 開發的 Counter-Strike 2
+            職業選手數據分析網站。
+            透過 Cito API 取得 NiKo、m0NESY、ZywOo、donk
+            四位選手的統計資料，並利用 Chart.js 呈現圖表、
+            比較選手表現，以及使用 Gemini AI 產生繁體中文分析。
+        </p>
+
+        <h3>2. 執行方式</h3>
+        <p>本專案使用 Python 與 uv 管理環境。</p>
+
+        <pre style="background: var(--bg); padding: 18px;
+                    border-radius: 8px; overflow-x: auto;"><code>uv sync
+    uv run python -m cs2_analytics.main --ai
+    uv run python -m http.server 8000 --directory docs</code></pre>
+
+        <p>
+            執行前需在本機設定 .env，
+            提供 CITO_API_KEY 與 GEMINI_API_KEY。
+            開啟 http://localhost:8000 即可查看網站。
+        </p>
+
+        <h3>3. 執行結果</h3>
+        <p>
+            成功取得四位 CS2 職業選手的統計資料，
+            包含 K/D、ADR、KAST、Cito Rating 等指標。
+            網站提供近期表現趨勢圖、地圖統計、
+            選手比較，以及 Gemini AI 產生的表現分析。
+        </p>
+
+        <h3>4. AI 使用說明</h3>
+        <p>
+            本專案使用 Gemini API 分析選手統計資料，
+            並透過 Pydantic 定義 JSON Schema，
+            實作 LLM 的結構化輸出（Structured Output）。
+        </p>
+        <p>
+            Gemini 根據生涯與近期統計資料，
+            產生選手整體評價、優勢、弱點、
+            近期表現及結論。
+            分析內容僅供參考，不代表已驗證的比賽事實。
+        </p>
+        <p>
+            開發過程使用 ChatGPT 協助 Python 程式設計、
+            除錯、GitHub Actions 設定及文件整理。
+            並透過本機測試、Pydantic 格式驗證、
+            GitHub Actions 執行紀錄與網站功能測試，
+            確認程式及分析結果。
+        </p>
+
+        <h3>5. 自動部署與金鑰管理</h3>
+        <p>
+            使用 GitHub Actions 自動下載最新統計資料、
+            執行 Gemini AI 分析並提交更新後的 JSON。
+            另一個 Workflow 負責自動部署 GitHub Pages。
+            API Key 使用本機 .env 與 GitHub Repository Secrets
+            管理，不提交至公開 Repository。
+        </p>
+
+        <p style="margin-top: 24px;">
+            <a href="https://github.com/Seia-Chan/CS2-Analytics"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="color: var(--accent);">
+                View Source Code on GitHub
+            </a>
+        </p>
+    </section>
+
     </main>
 
     <script>
