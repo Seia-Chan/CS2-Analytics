@@ -1,0 +1,37 @@
+{
+  "entityType": "cs2_player",
+  "id": "cs2-player-3741",
+  "nickname": "NiKo",
+  "slug": "niko",
+  "realName": "Nikola Kovač",
+  "imageUrl": "https://api.citoapi.com/api/v1/public/images/cs2/logos/ec44a0244094ad5ec5e21c85cae50b9a.webp",
+  "countryName": "Bosnia and Herzegovina",
+  "countryCode": "BA",
+  "age": 29,
+  "rating": 1.1,
+  "mapsPlayed": 162,
+  "careerStats": {
+    "rating": 1.1,
+    "lastKnownRating": 1.1
+  },
+  "currentTeamId": "cs2-team-11283",
+  "status": "active",
+  "primaryRole": "support",
+  "roleConfidence": "medium",
+  "statusUpdatedAt": "2026-11-06T08:12:10.865Z",
+  "lastSyncedAt": "2026-11-06T08:12:10.010Z",
+  "lastVerified": "2026-11-06T08:12:10.010Z",
+  "availableSubresources": [
+    "stats",
+    "matches",
+    "maps"
+  ],
+  "unavailableSubresources": [
+    "teams",
+    "weapons"
+  ],
+  "unavailableFields": {},
+  "dataQuality": "complete",
+  "confidence": "high",
+  "confidenceScore": 0.95
+}

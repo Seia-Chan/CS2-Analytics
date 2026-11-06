@@ -1,0 +1,28 @@
+{
+  "players": [
+    {
+      "id": "cs2-player-21167",
+      "name": "donk",
+      "team": "Spirit",
+      "dataFile": "donk_summary.json"
+    },
+    {
+      "id": "cs2-player-19230",
+      "name": "m0NESY",
+      "team": "Falcons",
+      "dataFile": "m0nesy_summary.json"
+    },
+    {
+      "id": "cs2-player-3741",
+      "name": "NiKo",
+      "team": "Falcons",
+      "dataFile": "niko_summary.json"
+    },
+    {
+      "id": "cs2-player-11893",
+      "name": "ZywOo",
+      "team": "Vitality",
+      "dataFile": "zywoo_summary.json"
+    }
+  ]
+}

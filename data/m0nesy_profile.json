@@ -1,0 +1,37 @@
+{
+  "entityType": "cs2_player",
+  "id": "cs2-player-19230",
+  "nickname": "m0NESY",
+  "slug": "m0nesy",
+  "realName": "Ilya Osipov",
+  "imageUrl": "https://api.citoapi.com/api/v1/public/images/cs2/logos/aecf8fa3355338579b1adbe2853cc758.webp",
+  "countryName": "Russia",
+  "countryCode": "RU",
+  "age": 21,
+  "rating": 1.17,
+  "mapsPlayed": 157,
+  "careerStats": {
+    "rating": 1.17,
+    "lastKnownRating": 1.17
+  },
+  "currentTeamId": "cs2-team-11283",
+  "status": "active",
+  "primaryRole": "AWPer",
+  "roleConfidence": "high",
+  "statusUpdatedAt": "2026-11-06T08:12:11.209Z",
+  "lastSyncedAt": "2026-11-06T08:12:10.300Z",
+  "lastVerified": "2026-11-06T08:12:10.300Z",
+  "availableSubresources": [
+    "stats",
+    "matches",
+    "maps"
+  ],
+  "unavailableSubresources": [
+    "teams",
+    "weapons"
+  ],
+  "unavailableFields": {},
+  "dataQuality": "complete",
+  "confidence": "high",
+  "confidenceScore": 0.95
+}
