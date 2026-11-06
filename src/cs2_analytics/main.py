@@ -47,11 +47,20 @@ def main():
     if args.ai:
         print("\n[3/3] Gemini AI 分析")
 
+        failed_ai_players = []
+
         for player in PLAYERS:
             try:
                 analyze_player(player)
+                print(f"{player} AI 分析成功")
             except Exception as error:
                 print(f"{player} AI 分析失敗：{error}")
+                failed_ai_players.append(player)
+
+        if failed_ai_players:
+            raise RuntimeError(
+                f"以下選手 AI 分析失敗：{', '.join(failed_ai_players)}"
+            )
     else:
         print("\n[3/3] 已略過 AI 分析")
 

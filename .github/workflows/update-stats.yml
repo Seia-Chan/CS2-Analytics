@@ -25,10 +25,12 @@ jobs:
       - name: Set up Python
         run: uv python install
 
-      - name: Download and process stats
+      - name: Download stats and generate Gemini AI analysis
         env:
           CITO_API_KEY: ${{ secrets.CITO_API_KEY }}
-        run: uv run python -m cs2_analytics.main
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: uv run python -m cs2_analytics.main --ai
+
 
       - name: Commit updated JSON
         run: |

@@ -25,8 +25,7 @@ def analyze_player(player_name):
     summary_path = DATA_DIR / f"{filename}_summary.json"
 
     if not summary_path.exists():
-        print(f"找不到選手資料：{summary_path}")
-        return
+        raise FileNotFoundError(f"找不到選手資料：{summary_path}")
 
     with summary_path.open("r", encoding="utf-8") as file:
         stats = json.load(file)
@@ -34,8 +33,7 @@ def analyze_player(player_name):
     api_key = os.getenv("GEMINI_API_KEY")
 
     if not api_key:
-        print("找不到 GEMINI_API_KEY，請檢查 .env")
-        return
+        raise RuntimeError("找不到 GEMINI_API_KEY，請檢查環境變數")
 
     client = genai.Client(api_key=api_key)
 
@@ -103,8 +101,9 @@ def analyze_player(player_name):
             return
 
         except (ValidationError, ValueError) as error:
-            print(f"AI 回傳格式錯誤：{error}")
-            return
+            raise RuntimeError(
+                f"{player_name} AI 回傳格式錯誤：{error}"
+            ) from error
 
         except Exception as error:
             print(f"第 {attempt + 1} 次呼叫失敗：{error}")
@@ -114,7 +113,9 @@ def analyze_player(player_name):
                 print(f"等待 {wait_seconds} 秒後重試...")
                 time.sleep(wait_seconds)
 
-    print("Gemini 暫時無法使用，沒有產生分析檔案。")
+        raise RuntimeError(
+            f"{player_name} Gemini 分析失敗，已重試 3 次"
+)
 
 
 def main():
