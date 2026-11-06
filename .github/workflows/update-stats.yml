@@ -1,0 +1,45 @@
+
+name: Update CS2 Player Stats
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        run: uv python install
+
+      - name: Download and process stats
+        env:
+          CITO_API_KEY: ${{ secrets.CITO_API_KEY }}
+        run: uv run python -m cs2_analytics.main
+
+      - name: Commit updated JSON
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -- docs/data/
+
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "Auto update CS2 player stats"
+            git push
+          fi
