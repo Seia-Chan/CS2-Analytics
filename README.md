@@ -55,17 +55,71 @@ https://seia-chan.github.io/CS2-Analytics/
 
 ## 本機執行
 
-安裝 uv 並設定本機 `.env` 後：
+### 1. 安裝套件
+
+安裝 uv 後，在專案根目錄執行：
 
 ```powershell
 uv sync
+```
+
+### 2. 設定 API Key
+
+在專案根目錄建立 `.env`，填入自己的 API Key：
+
+```env
+CITO_API_KEY=your_cito_api_key
+GEMINI_API_KEY=your_gemini_api_key
+```
+
+請勿將 `.env` 提交至 GitHub。
+
+### 3. 執行資料更新與 AI 分析
+
+```powershell
 uv run python -m cs2_analytics.main --ai
 ```
 
-啟動本機網站：
+### 4. 啟動網站
 
 ```powershell
 uv run python -m http.server 8000 --directory docs
 ```
 
-開啟 http://localhost:8000 查看網站。
+在瀏覽器開啟：
+
+http://localhost:8000
+
+## AI 使用說明
+
+### 使用的 AI 工具
+
+- **Gemini API**：分析 CS2 職業選手統計資料。
+- **ChatGPT**：協助程式設計、除錯、文件整理及 GitHub Actions 設定。
+
+### 使用的 LLM 技術
+
+本專案使用 Structured Output（結構化輸出）。
+
+透過 Pydantic 定義 JSON Schema，讓 Gemini API
+依照指定格式回傳選手分析結果。
+
+分析內容包含：
+
+1. 整體評價
+2. 選手優勢
+3. 選手弱點
+4. 近期表現
+5. 分析結論
+
+### 自行修改與驗證
+
+開發過程中，針對 API 資料處理、JSON 格式、
+網站呈現及 GitHub Actions 工作流程進行調整。
+
+使用本機執行結果、Pydantic 格式驗證、
+GitHub Actions 執行紀錄及 GitHub Pages 網站測試，
+確認程式可以正常運作。
+
+AI 產生的分析僅供參考，
+不代表已驗證的比賽事實。
