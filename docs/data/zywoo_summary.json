@@ -2,18 +2,18 @@
   "playerId": "cs2-player-11893",
   "playerName": "ZywOo",
   "source": "Cito API",
-  "asOf": "2026-11-06T09:37:03.894Z",
+  "asOf": "2026-11-08T09:37:03.863Z",
   "career": {
     "matches": 281,
     "maps": 652,
     "kills": 12295,
     "deaths": 8450,
     "assists": 3124,
-    "headshots": 4943,
+    "headshots": 5252,
     "kdRatio": 1.455,
     "killsPerMap": 18.8574,
-    "headshotRate": 0.426,
-    "headshotCoverage": 0.952
+    "headshotRate": 0.4274,
+    "headshotCoverage": 0.998
   },
   "recent": {
     "sampleSize": 10,

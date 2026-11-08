@@ -2,18 +2,18 @@
   "playerId": "cs2-player-21167",
   "playerName": "donk",
   "source": "Cito API",
-  "asOf": "2026-11-06T09:37:03.894Z",
+  "asOf": "2026-11-08T09:37:03.863Z",
   "career": {
     "matches": 263,
     "maps": 593,
     "kills": 11994,
     "deaths": 8834,
     "assists": 2786,
-    "headshots": 7255,
+    "headshots": 7300,
     "kdRatio": 1.3577,
     "killsPerMap": 20.226,
-    "headshotRate": 0.6092,
-    "headshotCoverage": 0.993
+    "headshotRate": 0.6093,
+    "headshotCoverage": 0.998
   },
   "recent": {
     "sampleSize": 10,

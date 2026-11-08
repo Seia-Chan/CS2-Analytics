@@ -2,18 +2,18 @@
   "playerId": "cs2-player-3741",
   "playerName": "NiKo",
   "source": "Cito API",
-  "asOf": "2026-11-06T09:37:03.894Z",
+  "asOf": "2026-11-08T09:37:03.863Z",
   "career": {
     "matches": 271,
     "maps": 651,
     "kills": 10701,
     "deaths": 9434,
     "assists": 3303,
-    "headshots": 5848,
+    "headshots": 5878,
     "kdRatio": 1.1343,
     "killsPerMap": 16.4378,
-    "headshotRate": 0.55,
-    "headshotCoverage": 0.994
+    "headshotRate": 0.5493,
+    "headshotCoverage": 1
   },
   "recent": {
     "sampleSize": 10,
